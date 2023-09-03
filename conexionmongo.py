@@ -2,7 +2,12 @@ from os import system
 from pymongo import MongoClient
 import os
 from pathlib import Path
+from tkinter import *
 
+raiz = Tk()
+raiz.title("Balcones de Capellania")
+raiz.geometry("450x450")
+raiz.mainloop()
 
 finalizar_programa = True
 def inicio():
@@ -48,7 +53,7 @@ def administracion_residentes():
     print(" (4) Volver")
     Residentes = input("Indica: ")
     if Residentes == '1':
-        print("**      Modulo de consulta      **")
+        print("**       Modulo de consulta       **")
         Casa = input("Ingresa el numero de casa a consultar: ")
         print("*  A continuacion se muestran los residentes activos de la casa seleccionada")
         cliente = conexion_mongo()
@@ -84,7 +89,27 @@ def administracion_residentes():
                     print('Casa no encontrada')
         input("Selecciona enter para continuar")
     elif Residentes == '3':
-        print("Modulo de agregar residentes")
+        print("*      Modulo de agregar residentes  *")
+        Casa = input("Ingresa el numero de casa para agregar un residente: ")
+        Nombres = input("Ingrese los nombres: ")
+        Apellidos = input("Ingrese los Apellidos: ")
+        Tipoid = input("Ingrese el tipo de Id: ")
+        Numid = input("Ingrese el numero de Id: ")
+        cliente = conexion_mongo()
+        db = cliente.Balcones
+        collection_Personas = db.Personas
+        collection_Personas.insert_one({'Telefono':{'Activo': '3013025888',
+                                                    'Activo': '3105987456'},
+                                        'Casa': Casa, 
+                                        'Estado': 'Activo',
+                                        'Tipo': 'Propietario',
+                                        'Identificacion': {
+                                                'Tipo': Tipoid,
+                                                'Numero': Numid
+                                            },
+                                        
+                                        })
+        input("Selecciona enter para continuar")
     elif Residentes == '4':
         print("Volver")
     else:
@@ -154,5 +179,5 @@ while finalizar_programa:
     elif eleccion == '5':
         finalizar_programa = cerrar_programa()
     else:
-        cerrar_programa()
+        finalizar_programa = cerrar_programa()
         
