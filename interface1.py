@@ -197,7 +197,7 @@ combo.bind("<<ComboboxSelected>>", selection_changed)
 print(valores)
 miLabel2=ttk.Label(miFrame, text="Recibi de: ")
 miLabel2.grid(row=1, column=0, sticky="e", padx=5, pady=5)
-combo2 = ttk.Combobox(miFrame, values=valores)
+combo2 = ttk.Combobox(miFrame)
 combo2.grid(row=1,column=1,  padx=5, pady=5)
 combo2.config(justify="center", width=30)
 
