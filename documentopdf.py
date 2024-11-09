@@ -271,4 +271,212 @@ def generate_pdf_paz_ySalvo():
     # Save the PDF
     pdf_canvas.save()
 
-generate_pdf_estado_cuenta()
+def generate_pdf_cuota():
+    # Create the canvas
+    pdf_canvas = canvas.Canvas("Cuota.pdf", pagesize=(400,550))
+    
+    # Cuadrante superior donde esta el nombre del conjunto
+    pdf_canvas.setFillColorRGB(211/255, 211/255, 211/255) 
+    pdf_canvas.roundRect(10, 490, 380, 50, 4, stroke=1, fill=1)
+    
+    #Segundo cuadrante
+    pdf_canvas.setFillColorRGB(210/255, 210/255, 225/255)
+    pdf_canvas.roundRect(10, 442, 380, 45, 4, stroke=1, fill=1)
+
+    #Cuadrante central
+    pdf_canvas.setFillColorRGB(210/255, 255/255, 210/255) 
+    pdf_canvas.roundRect(10, 10, 380, 428, 4, stroke=1, fill=1)
+    
+    #Cuandrante del numero del comprobante
+    pdf_canvas.setFillColorRGB(255/255, 255/255, 255/255) 
+    pdf_canvas.roundRect(250, 445, 135, 40, 4, stroke=1, fill=1)
+
+    pdf_canvas.line(10,156,390,156)
+    pdf_canvas.line(10,416,390,416)
+    #pdf_canvas.setDash(4,3)
+    #pdf_canvas.line(100,158,260,158)
+
+    pdf_canvas.setFillColorRGB(0,0,0)
+    pdf_canvas.setFont("Helvetica-Bold", 14)
+    pdf_canvas.drawString(60, 515, "DUQUE OCHOA PROPIEDAD HORIZONTAL")
+    pdf_canvas.setFont("Helvetica", 8)
+    pdf_canvas.drawString(160, 505, "Nit: 900.740.113-3")
+    pdf_canvas.drawString(150, 495, "Cra 8a # 20a-138 / 148")
+    
+    #pdf_canvas.setFont("Courier", 10)
+    pdf_canvas.setFont("Helvetica-Bold", 10)
+    pdf_canvas.drawString(255, 468, "CUOTA ADMINISTRACIÓN")
+    pdf_canvas.setFillColorRGB(255,0,0)
+    pdf_canvas.setFont("Helvetica-Bold", 14)
+    pdf_canvas.drawString(310, 450, "760")
+    
+    pdf_canvas.setFont("Times-Bold", 10)
+    pdf_canvas.setFillColorRGB(0, 0, 0)
+    pdf_canvas.drawString(25, 470   , "Fecha:     ")
+    pdf_canvas.drawString(145, 470, "Ciudad:     ")
+    pdf_canvas.drawString(50, 450, "Casa No:")
+    pdf_canvas.setFont("Times-Bold", 12)
+    pdf_canvas.drawString(25, 420, "Ref          Concepto                                               Valor          Fecha")
+    pdf_canvas.drawString(25, 160, "Resumen")
+
+    pdf_canvas.setFont("Courier-Bold", 10)
+    pdf_canvas.drawString(25, 140, "Pagos Recibidos")
+    pdf_canvas.drawString(25, 125, "Cuotas pagadas")
+    pdf_canvas.drawString(25, 110, "Cuotas atrasadas")
+    pdf_canvas.drawString(25, 95, "Saldo en mora")
+    pdf_canvas.drawString(25, 80, "Cargos del mes")
+    pdf_canvas.drawString(25, 65, "Cuotas facturadas")
+    pdf_canvas.drawString(25, 50, "Total a pagar")
+   
+    pdf_canvas.setFont("Courier-Oblique", 7.5)
+    pdf_canvas.drawString(25, 30, "Para pagos Numero de cuenta de Ahorros Banco Davivienda:  462500020963")
+    pdf_canvas.drawString(25, 20, "Este es su cuota de administración para pago en los 5 primeros dias del mes")
+    
+    #llenado de la informacion
+    pdf_canvas.setFont("Courier-Bold", 14)
+    pdf_canvas.drawString(100, 450, "07")
+    pdf_canvas.setFont("Courier-Bold", 10)
+    pdf_canvas.drawString(60, 470, "05/09/2023")
+    pdf_canvas.drawString(195, 470, "Cajica")
+    #parte del detalle de los movimientos.
+    pdf_canvas.drawString(25, 400, "535")
+    pdf_canvas.drawString(60, 400, "Pago recibido Transferencia")
+    pdf_canvas.drawString(260, 400, "$100000")
+    pdf_canvas.drawString(325, 400, "02/09/2023")
+    pdf_canvas.drawString(25, 380, "714")
+    pdf_canvas.drawString(60, 380, "Cancelacion cuota Septiembre")
+    pdf_canvas.drawString(260, 380, "$100000")
+    pdf_canvas.drawString(325, 380, "02/09/2023")
+    pdf_canvas.drawString(25, 360, "760")
+    pdf_canvas.drawString(60, 360, "Facturación cuota Octubre")
+    pdf_canvas.drawString(260, 360, "$100000")
+    pdf_canvas.drawString(325, 360, "01/10/2023")
+    #llenado de la parte de resumen
+    pdf_canvas.setFont("Courier-Bold", 10)
+    pdf_canvas.drawString(175, 140, "$100000")
+    pdf_canvas.drawString(175, 125, "1")
+    pdf_canvas.drawString(175, 110, "0")
+    pdf_canvas.drawString(175, 95, "$0")
+    pdf_canvas.drawString(175, 80, "$100000")
+    pdf_canvas.drawString(175, 65, "1")
+    pdf_canvas.drawString(175, 50, "$100000")
+
+    # Save the PDF
+    pdf_canvas.save()
+
+def generate_pdf_cuota2():
+    # Create the canvas
+    pdf_canvas = canvas.Canvas("Cuota1.pdf", pagesize=(400,550))
+    
+    # Cuadrante superior donde esta el nombre del conjunto
+    pdf_canvas.setFillColorRGB(211/255, 211/255, 211/255) 
+    pdf_canvas.roundRect(10, 490, 380, 50, 4, stroke=1, fill=1)
+    
+    #Segundo cuadrante
+    pdf_canvas.setFillColorRGB(210/255, 210/255, 225/255)
+    pdf_canvas.roundRect(10, 442, 380, 45, 4, stroke=1, fill=1)
+
+    #Cuadrante central
+    pdf_canvas.setFillColorRGB(210/255, 255/255, 210/255) 
+    pdf_canvas.roundRect(10, 10, 380, 428, 4, stroke=1, fill=1)
+    
+    #Cuandrante del numero del comprobante
+    pdf_canvas.setFillColorRGB(255/255, 255/255, 255/255) 
+    pdf_canvas.roundRect(250, 445, 135, 40, 4, stroke=1, fill=1)
+
+    pdf_canvas.line(10,156,390,156)
+    pdf_canvas.line(10,416,390,416)
+    #pdf_canvas.setDash(4,3)
+    #pdf_canvas.line(100,158,260,158)
+
+    pdf_canvas.setFillColorRGB(0,0,0)
+    pdf_canvas.setFont("Helvetica-Bold", 14)
+    pdf_canvas.drawString(60, 515, "DUQUE OCHOA PROPIEDAD HORIZONTAL")
+    pdf_canvas.setFont("Helvetica", 8)
+    pdf_canvas.drawString(160, 505, "Nit: 900.740.113-3")
+    pdf_canvas.drawString(150, 495, "Cra 8a # 20a-138 / 148")
+    
+    #pdf_canvas.setFont("Courier", 10)
+    pdf_canvas.setFont("Helvetica-Bold", 10)
+    pdf_canvas.drawString(255, 468, "CUOTA ADMINISTRACIÓN")
+    pdf_canvas.setFillColorRGB(255,0,0)
+    pdf_canvas.setFont("Helvetica-Bold", 14)
+    pdf_canvas.drawString(310, 450, "760")
+    
+    pdf_canvas.setFont("Times-Bold", 10)
+    pdf_canvas.setFillColorRGB(0, 0, 0)
+    pdf_canvas.drawString(25, 470   , "Fecha:     ")
+    pdf_canvas.drawString(145, 470, "Ciudad:     ")
+    pdf_canvas.drawString(50, 450, "Casa No:")
+    pdf_canvas.setFont("Times-Bold", 12)
+    pdf_canvas.drawString(25, 420, "Ref          Concepto                                               Valor          Fecha")
+    pdf_canvas.drawString(25, 160, "Resumen")
+
+    pdf_canvas.setFont("Courier-Bold", 10)
+    pdf_canvas.drawString(25, 140, "Pagos Recibidos")
+    pdf_canvas.drawString(25, 125, "Cuotas pagadas")
+    pdf_canvas.drawString(25, 110, "Cuotas atrasadas")
+    pdf_canvas.drawString(25, 95, "Saldo en mora")
+    pdf_canvas.drawString(25, 80, "Cargos del mes")
+    pdf_canvas.drawString(25, 65, "Cuotas pendientes")
+    pdf_canvas.drawString(25, 50, "Total a pagar")
+   
+    pdf_canvas.setFont("Courier-Oblique", 7.5)
+    pdf_canvas.drawString(25, 30, "Para pagos Numero de cuenta de Ahorros Banco Davivienda:  462500020963")
+    pdf_canvas.drawString(25, 20, "Este es su cuota de administración para pago en los 5 primeros dias del mes")
+    
+    #llenado de la informacion
+    pdf_canvas.setFont("Courier-Bold", 14)
+    pdf_canvas.drawString(100, 450, "14")
+    pdf_canvas.setFont("Courier-Bold", 10)
+    pdf_canvas.drawString(60, 470, "01/10/2023")
+    pdf_canvas.drawString(195, 470, "Cajica")
+    #parte del detalle de los movimientos.
+    pdf_canvas.drawString(25, 400, "535")
+    pdf_canvas.drawString(60, 400, "Pago recibido Transferencia")
+    pdf_canvas.drawString(260, 400, "$200000")
+    pdf_canvas.drawString(325, 400, "27/09/2023")
+
+    pdf_canvas.drawString(25, 380, "645")
+    pdf_canvas.drawString(60, 380, "Cancelación cuota Abril")
+    pdf_canvas.drawString(260, 380, "$100000")
+    pdf_canvas.drawString(325, 380, "27/09/2023")
+
+    pdf_canvas.drawString(25, 360, "700")
+    pdf_canvas.drawString(60, 360, "Cancelación cuota Mayo")
+    pdf_canvas.drawString(260, 360, "$100000")
+    pdf_canvas.drawString(325, 360, "27/09/2023")
+
+    pdf_canvas.drawString(25, 340, "715")
+    pdf_canvas.drawString(60, 340, "Cuota pendiente Junio")
+    pdf_canvas.drawString(260, 340, "$100000")
+    pdf_canvas.drawString(325, 340, "01/06/2023")
+
+    pdf_canvas.drawString(25, 320, "730")
+    pdf_canvas.drawString(60, 320, "Cuota pendiente Julio")
+    pdf_canvas.drawString(260, 320, "$100000")
+    pdf_canvas.drawString(325, 320, "01/07/2023")
+
+    pdf_canvas.drawString(25, 300, "745")
+    pdf_canvas.drawString(60, 300, "Cuota pendiente Agosto")
+    pdf_canvas.drawString(260, 300, "$100000")
+    pdf_canvas.drawString(325, 300, "01/08/2023")
+
+    pdf_canvas.drawString(25, 280, "760")
+    pdf_canvas.drawString(60, 280, "Facturación cuota Septiembre")
+    pdf_canvas.drawString(260, 280, "$100000")
+    pdf_canvas.drawString(325, 280, "01/09/2023")
+
+    #llenado de la parte de resumen
+    pdf_canvas.setFont("Courier-Bold", 10)
+    pdf_canvas.drawString(175, 140, "$200000")
+    pdf_canvas.drawString(175, 125, "2")
+    pdf_canvas.drawString(175, 110, "3")
+    pdf_canvas.drawString(175, 95, "$300000")
+    pdf_canvas.drawString(175, 80, "$100000")
+    pdf_canvas.drawString(175, 65, "4")
+    pdf_canvas.drawString(175, 50, "$400000")
+
+    # Save the PDF
+    pdf_canvas.save()
+generate_pdf_cuota2()
