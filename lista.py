@@ -1,3 +1,4 @@
+# Modificado desde la web
 import tkinter as tk
 from tkinter import ttk
 
